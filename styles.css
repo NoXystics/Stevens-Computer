@@ -11,36 +11,56 @@ body {
     overflow-x: hidden;
 }
 
-/* Header & Navigation */
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: transparent;
     color: white;
     padding: 1rem 0;
     position: fixed;
-    width: 100%;
-    top: 0;
+    width: 60%;
+    top: 50px;
+    border-radius: 2rem;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 6px whitesmoke, 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
 
 nav {
     max-width: 1200px;
-    margin: 0 auto;
+    margin:  auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
 }
 
-.logo {
+.logo-text {
     font-size: 1.5rem;
     font-weight: bold;
+    position: relative;
+}
+
+.logo-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-text:hover::after {
+    transform: scaleX(1);
 }
 
 .logo-image {
     height: 40px;
     margin-right: 10px;
     vertical-align: middle;
+    filter: grayscale(100%);
 }
 
 nav ul {
@@ -53,19 +73,35 @@ nav a {
     color: white;
     text-decoration: none;
     transition: opacity 0.3s;
+    position: relative;
 }
 
-nav a:hover {
-    opacity: 0.8;
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Hero Section */
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: transparent;
     color: white;
     padding: 150px 2rem 100px;
     text-align: center;
     border-radius: 25px;
+    margin-top: 150px;
+    box-shadow: 0 6px 6px whitesmoke, 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
 
 .hero h1 {
@@ -83,8 +119,10 @@ nav a:hover {
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: white;
-    color: #667eea;
+    background: transparent;
+    color: whitesmoke;
+    box-shadow: 0 6px 6px whitesmoke, 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
@@ -94,10 +132,9 @@ nav a:hover {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.2);
 }
 
-/* Sections */
 section {
     max-width: 1200px;
     margin: 0 auto;
@@ -108,10 +145,9 @@ h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #667eea;
+    color: whitesmoke;
 }
 
-/* Why Choose Us */
 .reasons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -119,17 +155,19 @@ h2 {
 }
 
 .reason-card {
-    background: white;
+    color: whitesmoke;
+    background: transparent;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 6px whitesmoke, 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
 }
 
 .reason-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(255,255,255,0.15);
 }
 
 .reason-icon {
@@ -138,11 +176,10 @@ h2 {
 }
 
 .reason-card h3 {
-    color: #667eea;
+    color: whitesmoke;
     margin-bottom: 1rem;
 }
 
-/* Portfolio */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -150,11 +187,11 @@ h2 {
 }
 
 .portfolio-item {
-    background: #f8f9fa;
+    background: transparent;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 6px 6px whitesmoke, 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
 
 .portfolio-item:hover {
@@ -164,25 +201,25 @@ h2 {
 .portfolio-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #000000 0%, #ffffff 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: whitesmoke;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
 .portfolio-content {
+    color: whitesmoke;
     padding: 1.5rem;
 }
 
 .portfolio-content h3 {
-    color: #667eea;
+    color: whitesmoke;
     margin-bottom: 0.5rem;
 }
 
-/* Pricing */
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -191,23 +228,18 @@ h2 {
 }
 
 .pricing-card {
-    background: white;
+    background: transparent;
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 6px whitesmoke, 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
     border: 3px solid transparent;
 }
 
 .pricing-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    border-color: #667eea;
-}
-
-.pricing-card.featured {
-    border-color: #667eea;
-    transform: scale(1.05);
+    border-color: #ffffff;
 }
 
 .pricing-header {
@@ -216,7 +248,7 @@ h2 {
 }
 
 .pricing-header h3 {
-    color: #667eea;
+    color: #ffffff;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
@@ -224,12 +256,12 @@ h2 {
 .price {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
 }
 
 .price span {
     font-size: 1rem;
-    color: #666;
+    color: #ffffff;
 }
 
 .pricing-features {
@@ -240,11 +272,12 @@ h2 {
 .pricing-features li {
     padding: 0.8rem 0;
     border-bottom: 1px solid #eee;
+    color: whitesmoke;
 }
 
 .pricing-features li:before {
     content: "✓ ";
-    color: #667eea;
+    color: #fdfdfd;
     font-weight: bold;
     margin-right: 0.5rem;
 }
@@ -253,7 +286,7 @@ h2 {
     display: block;
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #000000 0%, #ffffff 100%);
     color: white;
     text-align: center;
     text-decoration: none;
@@ -266,13 +299,14 @@ h2 {
     opacity: 0.9;
 }
 
-/* Contact */
 #contact {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: transparent;
+    color: whitesmoke;
     border-radius: 20px;
     margin: 80px auto;
     max-width: 1200px;
+    box-shadow: 0 6px 6px whitesmoke, 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
 
 .contact-content {
@@ -307,15 +341,17 @@ h2 {
     border: none;
     border-radius: 8px;
     font-family: inherit;
-    background: white;
-    color: #000;
+    background: transparent;
+    color: whitesmoke;
 }
 
 .contact-form button {
     width: 100%;
     padding: 1rem;
-    background: white;
-    color: #667eea;
+    background: transparent;
+    box-shadow: 0 6px 6px whitesmoke, 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+    color: #ffffff;
     border: none;
     border-radius: 50px;
     font-weight: bold;
@@ -328,15 +364,16 @@ h2 {
     transform: translateY(-3px);
 }
 
-/* Footer */
 footer {
-    background: #2d3748;
-    color: white;
+    background: transparent;
+    color: whitesmoke;
     text-align: center;
     padding: 2rem;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 6px 6px whitesmoke, 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -348,7 +385,6 @@ footer {
     }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -370,3 +406,50 @@ footer {
         font-size: 2rem;
     }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --size: 20px;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: hsl(0 0% 6%);
+}
+
+.el {
+  background: conic-gradient(
+    from 180deg at 50% 70%,
+    hsla(0, 0%, 98%, 1) 0deg,
+    #eec32d 72.0000010728836deg,
+    #ec4b4b 144.0000021457672deg,
+    #709ab9 216.00000858306885deg,
+    #4dffbf 288.0000042915344deg,
+    hsla(0, 0%, 98%, 1) 1turn
+  );
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  mask: radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% /
+      var(--size) var(--size),
+    url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px
+      256px;
+  mask-composite: intersect;
+  animation: flicker 20s infinite linear;
+}
+
+@keyframes flicker {
+  to {
+    mask-position: 50% 50%, 0 50%;
+  }
+}
+
+
