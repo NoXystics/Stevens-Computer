@@ -1,0 +1,12 @@
+-- Run this SQL to create the database and contacts table
+CREATE DATABASE IF NOT EXISTS stevens_computer CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE stevens_computer;
+
+CREATE TABLE IF NOT EXISTS contacts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  phone VARCHAR(64) DEFAULT '',
+  message TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
