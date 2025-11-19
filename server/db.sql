@@ -1,4 +1,3 @@
--- Run this SQL to create the database and contacts table
 CREATE DATABASE IF NOT EXISTS stevens_computer CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE stevens_computer;
 
